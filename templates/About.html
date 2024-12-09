@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>About</title>
+<link rel="icon" href="{{url_for('static',filename='ASL_logo.png')}}" type="image/x-icon">
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+    background-color:#0066ff;
+  }
+
+.header {
+    background-color: #191923;
+    color: #0066ff;
+    padding: 10px;
+  }
+
+.header a {
+    color: #0066ff;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+
+.nav-links{
+    flex: 1;
+    text-align: right;   /* placing the header list to right */
+}
+/* arranging the header in horizontal*/
+.nav .nav-links ul {
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+    display:inline-block;
+    vertical-align:top;
+  }
+
+.nav-links ul li{                      
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+
+
+.nav-links ul li a{
+    color: #ffea00;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+/* adding animation to header items*/
+.nav-links ul li:not(.except):after{ 
+    content: "";
+    width: 0%;
+    height: 2px;
+    background: #ffffff;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.nav-links ul li:not(.except):hover::after{
+    width: 100%;
+}
+
+
+.bgimg{
+    margin-top: 0;
+    display: flex;
+    justify-content: center;
+}
+
+
+.about{
+    text-align: center;
+    max-height: 100%;
+    /* background-color: #ffffff; */
+    position: relative;
+}
+
+.about h1{
+    font-size: 50px;
+    color: #ffffff;
+}
+
+
+.about p{
+    font-size: 25px;
+    text-align: center;
+    font-weight: 300;
+    padding: 15px;
+    color: #ffffff;
+    margin: 3%;
+}
+
+</style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-links">
+                <!-- making a list of headers-->
+                
+                <ul>
+                    <li class="except" style="vertical-align: middle;"><img src="{{ url_for('static', filename='ASL_logo.png') }}" style="vertical-align: middle;" height="70x" width="70px" ></li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/services">Services</a></li>
+                    <!-- <li class="login-btn"><a href="">Login</a></li> -->
+                </ul>
+                <!-- <button class="login-btn">Login</button> -->
+            </div>
+        </nav>
+    </header>
+    <div class="about" id="about">
+        <h1>About Us</h1>
+        <p>
+          Welcome to our innovative project aimed at revolutionizing the way American Sign Language (ASL) is taught and learned. Our team has developed an interactive website that leverages cutting-edge technologies such as computer vision and deep learning, all built on the Flask framework, to provide a comprehensive and engaging learning experience 
+          for ASL enthusiasts. 
+        </p>
+        <p>At its core, our project combines the power of computer vision and deep learning algorithms to accurately interpret and recognize ASL gestures in real-time. By harnessing the capabilities of these advanced technologies, we aim to bridge the communication gap between the hearing and deaf communities 
+          by providing a user-friendly platform for learning and practicing ASL online.</p>
+    </div>
+</body>
+</html>

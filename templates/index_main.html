@@ -1,0 +1,44 @@
+ <!DOCTYPE html>
+ <html>
+    <head>
+        <meta name="viewpoint" content="with=device-width, initial-scale=1.0">       <!-- used to make the page dynamic-->
+        <title>Learn ASL</title>
+        <link rel="icon" href="{{url_for('static',filename='ASL_logo.png')}}" type="image/x-icon">
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+    </head>
+    <body>
+        <header class="header">
+            <nav class="nav">
+                <div class="nav-links">
+                    <!-- making a list of headers-->
+                    
+                    <ul>
+                        <li class="except" style="vertical-align: middle;"><img src="{{ url_for('static', filename='ASL_logo.png') }}" style="vertical-align: middle;" height="70x" width="70px" ></li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/services">Services</a></li>
+                        <!-- <li class="login-btn"><a href="">Login</a></li> -->
+                    </ul>
+                    <!-- <button class="login-btn">Login</button> -->
+                </div>
+            </nav>
+      </header>
+<div class="home">
+      <h1>Want to Learn ASL ?</h1>
+      <img src="{{ url_for('static', filename='Home2.png') }}" alt="" height="500px" width="100%">
+</div>
+<div style="font-size:25px;color: white;">
+<ul>
+  <li>ASL is a complete, natural language used by the deaf and hard-of-hearing community.</li>
+  <br>
+  <li>ASL is a visual-gestural language that relies on hand movements, facial expressions, and body language to convey meaning and communicate thoughts, ideas, and emotions.</li>
+  <br>
+  <li>It plays a crucial role in facilitating interaction and inclusivity for individuals who are deaf or have hearing impairments.</li> 
+  </ul>
+</div>
+<br>
+<br>
+<br>
+<br>
+    </body>
+ </html>

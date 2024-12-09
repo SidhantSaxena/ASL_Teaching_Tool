@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Test</title>
+<link rel="icon" href="{{url_for('static',filename='ASL_logo.png')}}" type="image/x-icon">
+<style>
+body {
+    background: -webkit-gradient(linear, left top, right bottom, from(#0066ff), to(#0f2e52)) fixed;
+  /* background-image: linear-gradient(to bottom right, #1c87c9, #ffffff); */
+  font-family: sans-serif;
+}
+h1 {
+  font-size: 2em;
+  text-align: center;
+  color: #ffffff;
+}
+a,.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#value{
+  font-family: sans-serif;
+  font-size: 30px;
+  text-align: center;
+  margin: auto;
+}
+button{
+   background-color: #ffffff;
+    width: 100px;
+    height: 25px;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 20px;
+    color: #0066ff;
+    box-shadow: 2px 2px 2px 2px #ffffff;
+    border: 2px solid #ffffff;
+}
+
+</style>
+</head>
+<body>
+<h1>Test</h1>
+<img id="bg" src="{{url_for('video_feed')}}" class="center">
+<br>
+<div id="nextw" style="color:white;font-size:large;text-align: center;font-weight: bold;"></div>
+<br>
+<div style="display: grid;grid-template-columns: 1fr 1fr;grid-gap: 200px">
+  <div id="words" style="color:white;text-align:right;"></div>
+  <div id="score" style="color:white;"></div>
+</div>
+<br>
+<script>
+  k=0;
+  sc=0;
+  flag=true;
+  place = document.querySelector("#words");
+  score = document.querySelector("#score");
+  next = document.querySelector("#nextw");
+  const words=["word","sin","tail"];
+  arrn = words.length;
+  i=0;
+  setInterval(function(){
+      console.log("run function");
+      if(flag){
+        curr=words[k].toUpperCase();
+        next.innerText = "Next Character: "+curr[i];
+        len = curr.length;
+        place.innerText = "Given Word: "+curr;
+        fetch("/result")
+        .then(response => response.json())
+        .then(data => {
+            x = ""+data;
+            if(curr[i]==x){
+              i+=1;
+              if(i==len){
+                k+=1;
+                i=0;
+                sc+=10;
+              }
+              if(k==arrn){
+                flag=false;
+                score.innerText = "Score:"+sc;
+                window.alert("TEST COMPLETE\nFinal Score: "+sc+"\nPlease go back");
+              }
+            }  
+        })
+        score.innerText = "Score:"+sc;
+      }
+  }, 40);
+</script>
+<a href="/services"><button>Back</button></a>
+</body>
+</html>

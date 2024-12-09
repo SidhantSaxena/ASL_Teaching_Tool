@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>About</title>
+<link rel="icon" href="{{url_for('static',filename='ASL_logo.png')}}" type="image/x-icon">
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+    background-color:#0066ff;
+  }
+
+.header {
+    background-color: #191923;
+    color: #0066ff;
+    padding: 10px;
+  }
+
+.header a {
+    color: #0066ff;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+
+.nav-links{
+    flex: 1;
+    text-align: right;   /* placing the header list to right */
+}
+/* arranging the header in horizontal*/
+.nav .nav-links ul {
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+    display:inline-block;
+    vertical-align:top;
+  }
+
+.nav-links ul li{                      
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+
+
+.nav-links ul li a{
+    color: #ffea00;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+/* adding animation to header items*/
+.nav-links ul li:not(.except):after{ 
+    content: "";
+    width: 0%;
+    height: 2px;
+    background: #ffffff;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.nav-links ul li:not(.except):hover::after{
+    width: 100%;
+}
+
+
+.bgimg{
+    margin-top: 0;
+    display: flex;
+    justify-content: center;
+}
+
+
+.about{
+    text-align: center;
+    max-height: 100%;
+    /* background-color: #ffffff; */
+    position: relative;
+}
+
+.about h1{
+    font-size: 50px;
+    color: #ffffff;
+}
+
+
+.about p{
+    font-size: 25px;
+    text-align: center;
+    font-weight: 300;
+    padding: 15px;
+    color: #ffffff;
+    margin: 3%;
+}
+
+.container {
+    text-align: center;
+}
+
+.button img{
+    height: 300px;
+    width: 300px;
+}
+
+.button {
+  display: inline-block;
+  position:relative;
+  padding: 70px;
+  padding-top: 0%;
+  padding-bottom: 0%;
+}
+
+/* Cursor pointer on the images to indicate they are clickable */
+.button img {
+  cursor: pointer;
+}
+
+/* Glow effect on button hover */
+.button:hover {
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  transform: translateY(-5%);
+}
+
+
+</style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-links">
+                <!-- making a list of headers-->
+                
+                <ul>
+                    <li class="except" style="vertical-align: middle;"><img src="{{ url_for('static', filename='ASL_logo.png') }}" style="vertical-align: middle;" height="70x" width="70px" ></li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/services">Services</a></li>
+                    <!-- <li class="login-btn"><a href="">Login</a></li> -->
+                </ul>
+                <!-- <button class="login-btn">Login</button> -->
+            </div>
+        </nav>
+    </header>
+    <div class="container" id="container">
+        <h1 style="color: white; font-size:60px;">Services</h1>
+        <br>
+        <br>
+        <!-- Button 1 -->
+        <div class="button">
+          <!-- Link to button1.html -->
+          <a href="/playground">
+            <!-- Image for Button 1 -->
+            <img src="{{ url_for('static', filename='6.png') }}" alt="Button 1">
+          </a>
+        </div>
+        
+        <!-- Button 2 -->
+        <div class="button">
+          <!-- Link to button2.html -->
+          <a href="/learning">
+            <!-- Image for Button 2 -->
+            <img src="{{ url_for('static', filename='3.png') }}" alt="Button 2">
+          </a>
+        </div>
+        
+        <!-- Button 3 -->
+        <div class="button">
+          <!-- Link to button3.html -->
+          <a href="/testing">
+            <!-- Image for Button 3 -->
+            <img src="{{ url_for('static', filename='5.png') }}" alt="Button 3">
+          </a>
+        </div>
+</body>
+</html>
