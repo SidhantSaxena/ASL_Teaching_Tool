@@ -28,8 +28,8 @@ A hand sign learning tool developed using computer vision and deep learning, lat
 
 ### Web Outputs:
 - ##### Learning:
-  ![](Picture2.gif)
+![](Picture2.gif)
 - ##### Testing:
-  ![](Picture1.gif)
+![](Picture1.gif)
 - ##### Playground:
-  ![](Picture3.gif)
+![](Picture3.gif)
