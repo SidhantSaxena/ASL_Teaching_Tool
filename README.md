@@ -25,3 +25,11 @@ A hand sign learning tool developed using computer vision and deep learning, lat
 ### **3. Learning Module**  
 - Displays different hand signs on the left panel.  
 - Users must mimic the shown sign correctly to proceed to the next sign.  
+
+### Web Outputs:
+- ##### Learning:
+  ![](Picture2.gif)
+- ##### Testing:
+  ![](Picture1.gif)
+- ##### Playground:
+  ![](Picture3.gif)
